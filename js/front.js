@@ -108,7 +108,9 @@ jQuery('.chat-input input').keyup(function(e) {
   
   
   function openForm() {
-    document.getElementById("chatForm").style.display = "block";
+    jQuery("#chatForm").toggle();
+
+  //  document.getElementById("chatForm").style.display = "block";
   }
   
   function closeForm() {
