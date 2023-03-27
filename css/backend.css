@@ -1,8 +1,16 @@
 
+.ai-wrap {
+  background: #fff;
+  padding: 30px 25px;
+}
+
+
 .ai-loader{
     display:none;
-    
     }
+    label.ai-label {
+      font-weight: 700;
+  }
 .ai-style {
     background: #5b50ff;
     color: #fff;
@@ -10,9 +18,6 @@
     width: 600px;
     line-height: 1.5;
     }
-    
- 
-    
     ul.wrapper {
         width: 500px;
     }

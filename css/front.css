@@ -1,8 +1,5 @@
 *, html {
-
-    /* background: linear-gradient(135deg,#020381,#2874fc);
-} */
-    --primaryGradient: linear-gradient(93.12deg, #020381 0.52%, #0a59e0 100%);
+    --primaryGradient: linear-gradient(93.12deg, #080ad9 0.52%, #1564ed 100%);
     --secondaryGradient: linear-gradient(268.91deg, #020381 -2.14%, #0a59e0 99.69%);
     --primaryBoxShadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     --secondaryBoxShadow: 0px -10px 15px rgba(0, 0, 0, 0.1);
@@ -11,41 +8,71 @@
     --semiBold: 600;
     --extraLight: 300;
     --italic: 300;
-    --primary: #581B98;
+    --primary: #062fb1;
 }
 
+.form-container .ai-header h2{
 
+    font-size: 16px;
+}
 .form-container .ai-header {
     text-align: center;
     padding: 8px;
     background: var(--primaryGradient);
-    margin: 0;
-    color: #fff;
-    font-size: 18px;
-		    border-radius: 20px 20px 0 0;
-
+    margin-bottom: 10px;
+        color: #fff;
+    border-radius: 12px 12px 0 0;
 }
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
-    background-color: #5550;
     color: white;
-    padding: 20px 20px;
+    padding: 12px 12px;
     border: none;
     cursor: pointer;
-    opacity: 0.8;
     position: fixed;
     bottom: 23px;
     right: 28px;
-    width: auto;
-    height: 40px;
     border-radius: 100%;
     z-index: 9999999999;
     background: var(--secondaryGradient);
     box-shadow: var(--secondaryBoxShadow);
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
+.ai-display{
+    -webkit-animation-duration: .25s;
+    animation-duration: .25s;
+    -webkit-animation-name: iconAnimation;
+    animation-name: iconAnimation;
+}
+.ai-chatbot-icon {
+    fill: #fff;
+}
+
+@-webkit-keyframes iconAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(.5)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes iconAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(.5)
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
 .ai-head-img {
     margin-right: 10px;
 }
@@ -54,11 +81,11 @@
 .chat-popup {
     display: none;
     position: fixed;
-    bottom: 0;
-    right: 15px;
-    border-radius: 4px 4px 0 0;
-    z-index: 9999999999;
-    top: 60px;
+    bottom: 100px;
+        right: 15px;
+    z-index: 999999999;
+    border-radius: 12px 12px 0 0;
+    background: #fff;
 }
 
 .chat-window::-webkit-scrollbar {
@@ -70,8 +97,8 @@
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     border-radius: 24px 24px 0 0;
 	background: #f9f9f9;
-    height: 450px;
-    width: 350px;
+    height: 400px;
+    width: 310px;
 	padding-bottom: 30px;
 }
 
@@ -134,18 +161,12 @@
 }
 .chat-window {
     flex: auto;
-    max-height: calc(100% - 35px);
-/*     background: #2f323b; */
+    max-height: calc(100% - 34px);
+    padding: 0 !important;
     overflow: auto;
+    background: #f9f9f9;
 }
 .chat-input {
-/*     flex: 0 0 auto;
-    height: 60px;
-    background: #40434e;
-    border-top: 1px solid #2671ff;
-    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28); */
-	
-/* 	display: flex; */
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -154,30 +175,26 @@ padding: 15px 15px;
     box-shadow: var(--secondaryBoxShadow);
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
+    margin-top: 10px;
+
 }
 .chat-input input {
-/*     height: 59px !important;
-    line-height: 60px !important;
-    outline: 0 none;
-    border: none !important;
-    width: calc(100% - 60px) !important;
-    color: white;
-    text-indent: 10px;
-    font-size: 12pt !important;
-    padding: 0 !important;
-    background: #40434e; */
-	
 	height: 50px !important;
     line-height: 60px !important;
     outline: 0 none;
     border: none !important;
-    width: calc(100% - 60px) !important;
-    text-indent: 10px;
+    width: calc(100% - 50px) !important;
+        text-indent: 10px;
     font-size: 12pt !important;
     padding: 0 !important;
     background: #ffffff;
     border-radius: 30px !important;
     text-align: center;
+}
+
+#chatClick .chat-arrow{
+    width: 60%;
+    margin-left: 6px;
 }
 .chat-input button {
     float: right;
@@ -188,12 +205,12 @@ padding: 15px 15px;
     width: 40px;
     border-radius: 50%;
     padding: 2px 0 0 0;
-    margin: 10px;
-    transition: all 0.15s ease-in-out;
+    margin-top: 10px;
+        transition: all 0.15s ease-in-out;
 }
 .chat-input input[good] + button {
     box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24);
-    background: #2671ff;
+    background: var(--primaryGradient);
 }
 .chat-input input[good] + button:hover {
     box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -209,25 +226,13 @@ padding: 15px 15px;
     padding: 0;
 }
 .msg-box {
-/*     display: flex;
-    background: #5b5e6c;
-    padding: 10px 10px 0 10px;
-    border-radius: 0 6px 6px 0;
-    max-width: 80%;
-    width: auto;
-    float: left;
-    box-shadow: 0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24); */
-	
-	
 	display: flex;
-    padding: 10px 10px 0 10px;
+    padding: 5px 10px 0 10px;
     border-radius: 20px 20px 20px 0;
     width: auto;
-    margin-top: 10px;
-    background: #E0E0E0;
+    background: #dfeaff;
     max-width: 70%;
     margin-left: 10px;
-}
 }
 .user-img {
     display: inline-block;
@@ -251,12 +256,14 @@ padding: 15px 15px;
     font-size: 11pt;
     line-height: 13pt;
     margin: 0 0 4px 0;
+    font-weight: 400;
+    font-size: .812rem;
 }
 .msg:first-of-type {
     margin-top: 8px;
 }
 .msg-remote .timestamp {
-    color: rgb(133 17 255);
+    color: var(--primary);
     font-size: 8pt;
     margin-bottom: 10px;
 }
@@ -272,10 +279,6 @@ padding: 15px 15px;
     margin-left: 3px;
 }
 .msg-self .msg-box {
-/*     border-radius: 6px 0 0 6px;
-    background: #2671ff;
-    float: right; */
-	
 	
 	border-radius: 20px 20px 0 20px;
     float: right;
@@ -365,7 +368,7 @@ padding: 15px 15px;
     width: 12px;
     border-radius: 100%;
     animation: dot-pulse 0.9s ease both infinite;
-    background: #8f25e5;
+    background: var(--primary);
     display: inline-block;
 }
 .dot--one {

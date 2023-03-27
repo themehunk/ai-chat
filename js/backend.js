@@ -8,8 +8,8 @@ jQuery( document ).ready(function() {
       jQuery.ajax({
                type : "POST",
             //   dataType : "json",
-               url : ai_chatboat.ajax_url,
-               data : {action: "open_ai_ajax",aidata:aiData},
+               url : ai_chatbot.ajax_url,
+               data : {action: "open_ai_ajax",aidata:aiData,_anonce:ai_chatbot._anonce},
                success: function(response) {
                jQuery('#re-compare-bar').append( response);
                jQuery('.ai-loader').hide();
