@@ -1,0 +1,39 @@
+
+.ai-loader{
+    display:none;
+    
+    }
+.ai-style {
+    background: #5b50ff;
+    color: #fff;
+    padding: 20px;
+    width: 600px;
+    line-height: 1.5;
+    }
+    
+ 
+    
+    ul.wrapper {
+        width: 500px;
+    }
+      .form-row {
+        display: flex;
+        justify-content: flex-end;
+        padding: .5em;
+      }
+      .form-row > label {
+        flex: 1;
+      }
+      .form-row > input[type="text"] {
+        flex: 2;
+      }
+     .form-row > input[type="text"],
+      .form-row > button {
+        padding: .2em;
+      }
+     
+      .form-row > button {
+       background: gray;
+       color: white;
+       border: 0;
+      }
