@@ -19,7 +19,8 @@ function ai_chatbot(){
 
   }
 
-function ai_chatbot_admin_enqueue() {
+function ai_chatbot_admin_enqueue($hook) {
+  if($hook != 'toplevel_page_ai-chatbot') return;
   wp_enqueue_style('ai-chatbot-bstyle', AI_CHATBOT_URL.'/css/backend.css');
   wp_enqueue_script( 'ai-chatbot-backend',  AI_CHATBOT_URL. '/js/backend.js', array('jquery') );
 
