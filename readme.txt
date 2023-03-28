@@ -1,18 +1,18 @@
-====== AI Chatbot ========
+====== AI Chat - Ai Chat with OpenAi ChatGPT ========
 Contributors: ThemeHunk
 Author URI: : https://www.themehunk.com/
-Tags: AI, ChatGPT, gpt-3, gpt-4, OpenAi, Chatbot, Live chat
+Tags: AI Chat, ChatGPT, gpt-3, gpt-4, OpenAi, Chatbot, Live chat
 Requires at least: 6.0
 Tested up to: 6.1
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-AI Chatbot plugin integrated with OpenAI ChatGPT technology! Engage your website visitors like never before with a personalized chat experience.
+AI Chat plugin integrated with OpenAI ChatGPT technology! Engage your website visitors like never before with a personalized chat experience.
 
 == Description ==
 
-**AI Chatbot**
+**AI Chat**
 
 Introducing a revolutionary WordPress plugin by ThemeHunk Team - an AI Chatbot plugin integrated with OpenAI ChatGpt technology! Engage your website visitors like never before with a personalized chat experience, available 24/7. This Ai Chatbot Plugin is designed to help increase user engagement and improve conversions. 
 
@@ -20,7 +20,7 @@ Our chatbot is designed to help increase user engagement and improve conversions
 
 With its advanced natural language processing capabilities, it can handle complex queries and provide relevant responses, making it the perfect addition to any website. Plus, with its SEO-friendly design, you can boost your website’s visibility and attract more traffic. Try it out today and see the difference it can make for your website!
 
-AI Chatbot WordPress plugin powered by ChatGPT OpenAI technology comes with a range of powerful features that are designed to enhance the user experience on your website. Here are just a few of the features:
+AI Chat WordPress plugin powered by ChatGPT OpenAI technology comes with a range of powerful features that are designed to enhance the user experience on your website. Here are just a few of the features:
 
 **Key Features:-**
 
@@ -33,7 +33,7 @@ AI Chatbot WordPress plugin powered by ChatGPT OpenAI technology comes with a ra
 
 == Installation ==
 
-1. Upload the `ai-chatbot.zip` to the `/wp-content/plugins/` directory
+1. Upload the `ai-chat.zip` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
@@ -46,7 +46,7 @@ You can create your OpenAi API key from here:
 It is compatible with all ThemeHunk themes and almost all other WordPress themes, We always try to make our Plugin compatible with All WordPress Themes. If this plugin will create any kind of issue with any theme. You’re Free to contact us , Our Team will be Happy to help you.
 
 = How to Install Plugin =
-Just upload the `ai-chatbot.zip` to the `/wp-content/plugins/` directory, and then activate it from 'Plugins' menu in WordPress.
+Just upload the `ai-chat.zip` to the `/wp-content/plugins/` directory, and then activate it from 'Plugins' menu in WordPress.
 
 
 == Changelog ==

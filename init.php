@@ -3,7 +3,7 @@
 * Plugin Name: AI Chat
   Version: 1.0
   Author: ThemeHunk
-  Description:AI Chatbot plugin integrated with OpenAI ChatGPT technology! Engage your website visitors like never before with a personalized chat experience.
+  Description:AI Chat plugin integrated with OpenAI ChatGPT technology! Engage your website visitors like never before with a personalized chat experience.
   Text Domain: ai-chat
   Author URI: http://www.themehunk.com/
  */
