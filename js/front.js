@@ -10,7 +10,7 @@ function ai_loader(){
        jQuery.ajax({
                 type : "POST",
                 url : ai_chatot_ajax.ajax_url,
-                data : {action: "open_ai_ajax",aidata:aiData,_anonce:ai_chatot_ajax._anonce},
+                data : {action: "ai_chatbot_ajax",aidata:aiData,_anonce:ai_chatot_ajax._anonce},
                 success: function(response) {
                     jQuery('.chat-window .chat-auto-load').remove();
                 jQuery('.chat-window').animate({scrollTop: jQuery('.chat-window').prop("scrollHeight")}, 500);

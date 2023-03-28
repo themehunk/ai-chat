@@ -3,10 +3,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // opne ai api
 ob_start();
-add_action( 'wp_ajax_nopriv_open_ai_ajax', 'open_ai_ajax' );
-add_action( 'wp_ajax_open_ai_ajax', 'open_ai_ajax' );
+define('AI_CHATBOT_API_KEY',ai_chatbot_get('api_key'));
+add_action( 'wp_ajax_nopriv_ai_chatbot_ajax', 'ai_chatbot_ajax' );
+add_action( 'wp_ajax_ai_chatbot_ajax', 'ai_chatbot_ajax' );
 
-function open_ai_image_ajax(){
+function ai_chatbot_image_ajax(){
   $nonce = isset($_REQUEST['_anonce'])?$_REQUEST['_anonce']:false;
 
   if ( ! wp_verify_nonce( $nonce, 'ai-chatbot-nonec-ajax' ) ) {   
@@ -18,7 +19,7 @@ function open_ai_image_ajax(){
     if(isset($_POST['aidata']) && !empty($_POST['aidata'])){
     $message = sanitize_text_field($_POST['aidata']);
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://api.openai.com/v1/images/generations');
+    curl_setopt($ch, CURLOPT_URL, esc_url('https://api.openai.com/v1/images/generations'));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, "{\n    \"prompt\": \"$message\",\n    \"n\": 1,\n    \"size\": \"1024x1024\"\n  }");
@@ -49,7 +50,7 @@ die();
 //create function with an exception
 function checkNum($number) {
   if($number>1) {
-    throw new Exception("Invaild Authentication and Request Error.");
+    throw new Exception(__("Invaild Authentication and Request Error.",'ai-chatbot'));
   }
   return true;
 }
@@ -60,7 +61,7 @@ return '<article class="msg-container msg-remote" id="msg-0"><div class="msg-box
 }
 
 
-function open_ai_ajax(){
+function ai_chatbot_ajax(){
 
   $nonce = isset($_REQUEST['_anonce'])?$_REQUEST['_anonce']:false;
 
