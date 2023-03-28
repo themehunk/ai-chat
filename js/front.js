@@ -35,13 +35,15 @@ jQuery('.chat-input input').keyup(function(e) {
   
     jQuery('#chatClick').on('click', function(e){
       
-      jQuery("#chatbox").attr('disabled','disabled');
-      jQuery("#chatbox").attr('placeholder','Waiting...');
-      jQuery( "#chatbox" ).css( "background-color","#c9c9c9" );
+
       var dp = ai_chatot_ajax.ai_chatbot_url+'images/dp.png';
         var chatText = jQuery.trim(jQuery('#chatbox').val());
         let stringLength = chatText.length;
         if(chatText==='') return;
+
+        jQuery("#chatbox").attr('disabled','disabled');
+        jQuery("#chatbox").attr('placeholder','Waiting...');
+        jQuery( "#chatbox" ).css( "background-color","#c9c9c9" );
 
         jQuery('#chatbox').val('');
         jQuery('.chat-window').animate({scrollTop: jQuery('.chat-window').prop("scrollHeight")}, 500);

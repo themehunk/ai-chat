@@ -3,7 +3,9 @@
   background: #fff;
   padding: 30px 25px;
 }
-
+li.form-li i {
+  margin-left: 35%;
+}
 
 .ai-loader{
     display:none;

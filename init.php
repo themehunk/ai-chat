@@ -1,8 +1,9 @@
 <?php
 /*
 * Plugin Name: AI Chatbot
-  Version: 0.1
+  Version: 1.0
   Author: ThemeHunk
+  Description:AI Chatbot plugin integrated with OpenAI ChatGPT technology! Engage your website visitors like never before with a personalized chat experience.
   Text Domain: ai-chatboat
   Author URI: http://www.themehunk.com/
  */
@@ -16,8 +17,11 @@ define('AI_CHATBOT_IMG_BOT', AI_CHATBOT_URL.'images/bot-chat.png');
 
 add_action('admin_menu',  'ai_chatbot_admin_menu');
 
+
+
 function ai_chatbot_admin_menu(){
-    add_menu_page(__('AI Chatbot', 'ai-chatbot'), __('AI Chatboat', 'ai-chatbot'), 'manage_options', 'ai-chatbot', 'ai_chatbot',  '', 40);
+    add_menu_page(__('AI Chatbot', 'ai-chatbot'), __('AI Chatboat', 'ai-chatbot'), 'manage_options', 'ai-chatbot','ai_chatbot', AI_CHATBOT_URL.'/images/icon-bot.png',66);
+
 }
 
 function ai_chatbot_admin_enqueue() {
