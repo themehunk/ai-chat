@@ -3,16 +3,16 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // opne ai api
 ob_start();
-define('AI_CHATBOT_API_KEY',ai_chatbot_get('api_key'));
-add_action( 'wp_ajax_nopriv_ai_chatbot_ajax', 'ai_chatbot_ajax' );
-add_action( 'wp_ajax_ai_chatbot_ajax', 'ai_chatbot_ajax' );
+define('AI_CHAT_API_KEY',ai_chat_get('api_key'));
+add_action( 'wp_ajax_nopriv_ai_chat_ajax', 'ai_chat_ajax' );
+add_action( 'wp_ajax_ai_chat_ajax', 'ai_chat_ajax' );
 
-function ai_chatbot_image_ajax(){
+function ai_chat_image_ajax(){
   $nonce = isset($_REQUEST['_anonce'])?$_REQUEST['_anonce']:false;
 
-  if ( ! wp_verify_nonce( $nonce, 'ai-chatbot-nonec-ajax' ) ) {   
+  if ( ! wp_verify_nonce( $nonce, 'ai-chat-nonec-ajax' ) ) {   
 
-    die( __( 'Security check', 'ai-chatbot' ) ); 
+    die( __( 'Security check', 'ai-chat' ) ); 
 
 }else{
 
@@ -26,7 +26,7 @@ function ai_chatbot_image_ajax(){
 
     $headers = array();
     $headers[] = 'Content-Type: application/json';
-    $headers[] = 'Authorization: Bearer '.AI_CHATBOT_API_KEY;
+    $headers[] = 'Authorization: Bearer '.AI_CHAT_API_KEY;
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
     $result = curl_exec($ch);
@@ -50,24 +50,24 @@ die();
 //create function with an exception
 function checkNum($number) {
   if($number>1) {
-    throw new Exception(__("Invaild Authentication and Request Error.",'ai-chatbot'));
+    throw new Exception(__("Invaild Authentication and Request Error.",'ai-chat'));
   }
   return true;
 }
 
-function ai_chatbot_message($content){
+function ai_chat_message($content){
 			
-return '<article class="msg-container msg-remote" id="msg-0"><div class="msg-box"><div class="flr"><div class="messages"><p class="msg" id="msg-1">'.nl2br($content).'</p></div><span class="timestamp"><span class="username">AI Bot</span></div><img class="user-img" id="user-0" src="'.esc_url(AI_CHATBOT_IMG_BOT).'" /></div><audio controls autoplay audio style="display:none;"> <source src="'.esc_url(AI_CHATBOT_AI_AUDIO).'"  type="audio/mpeg"> </audio></article></article>';
+return '<article class="msg-container msg-remote" id="msg-0"><div class="msg-box"><div class="flr"><div class="messages"><p class="msg" id="msg-1">'.nl2br($content).'</p></div><span class="timestamp"><span class="username">AI Bot</span></div><img class="user-img" id="user-0" src="'.esc_url(AI_CHAT_IMG_BOT).'" /></div><audio controls autoplay audio style="display:none;"> <source src="'.esc_url(AI_CHAT_AI_AUDIO).'"  type="audio/mpeg"> </audio></article></article>';
 }
 
 
-function ai_chatbot_ajax(){
+function ai_chat_ajax(){
 
   $nonce = isset($_REQUEST['_anonce'])?$_REQUEST['_anonce']:false;
 
-  if ( ! wp_verify_nonce( $nonce, 'ai-chatbot-nonec-ajax' ) ) {   
+  if ( ! wp_verify_nonce( $nonce, 'ai-chat-nonec-ajax' ) ) {   
 
-    die( __( 'Security Issue', 'ai-chatbot' ) ); 
+    die( __( 'Security Issue', 'ai-chat' ) ); 
 
 }else{
 
@@ -81,7 +81,7 @@ function ai_chatbot_ajax(){
 
     $headers = array();
     $headers[] = 'Content-Type: application/json';
-    $headers[] = 'Authorization: Bearer '.AI_CHATBOT_API_KEY;
+    $headers[] = 'Authorization: Bearer '.AI_CHAT_API_KEY;
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
     $result = curl_exec($ch);
@@ -100,7 +100,7 @@ $error = isset($openai_data->choices[0]->message->content)?true:2;
 try { 
 		checkNum($error);
   //If the exception is thrown, this text will not be shown
- echo ai_chatbot_message($openai_data->choices[0]->message->content);
+ echo ai_chat_message($openai_data->choices[0]->message->content);
 }
 
 //catch exception
@@ -114,7 +114,7 @@ catch(Exception $e) {
 die();
 }
 
-function ai_chatbot_backend_input(){
+function ai_chat_backend_input(){
    ?>
    <h2><?php __('Open AI Testing data', 'ai-chatboat'); ?> </h2>
     <form method="post">
